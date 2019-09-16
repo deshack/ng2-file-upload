@@ -1,5 +1,5 @@
-import { FileLikeObject } from './file-like-object.class';
-import { FileUploader, ParsedResponseHeaders, FileUploaderOptions } from './file-uploader.class';
+import {FileLikeObject} from './file-like-object.class';
+import {FileUploader, ParsedResponseHeaders, FileUploaderOptions} from './file-uploader.class';
 
 export class FileItem {
   public file: FileLikeObject;
@@ -21,9 +21,9 @@ export class FileItem {
   public _xhr: XMLHttpRequest;
   public _form: any;
 
+  public options: FileUploaderOptions;
   protected uploader: FileUploader;
   protected some: File;
-  protected options: FileUploaderOptions;
 
   public constructor(uploader: FileUploader, some: File, options: FileUploaderOptions) {
     this.uploader = uploader;
@@ -60,27 +60,27 @@ export class FileItem {
   }
 
   public onBuildForm(form: any): any {
-    return { form };
+    return {form};
   }
 
   public onProgress(progress: number): any {
-    return { progress };
+    return {progress};
   }
 
   public onSuccess(response: string, status: number, headers: ParsedResponseHeaders): any {
-    return { response, status, headers };
+    return {response, status, headers};
   }
 
   public onError(response: string, status: number, headers: ParsedResponseHeaders): any {
-    return { response, status, headers };
+    return {response, status, headers};
   }
 
   public onCancel(response: string, status: number, headers: ParsedResponseHeaders): any {
-    return { response, status, headers };
+    return {response, status, headers};
   }
 
   public onComplete(response: string, status: number, headers: ParsedResponseHeaders): any {
-    return { response, status, headers };
+    return {response, status, headers};
   }
 
   public _onBeforeUpload(): void {
